@@ -1,0 +1,511 @@
+/* === ESTILOS GENERALES === */
+body {
+  font-family: 'Adamina', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #000;
+  scroll-behavior: smooth; /* Scroll suave */
+}
+
+/* === NAVBAR (HEADER) === */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand img {
+  height: 120px; /* Tamaño grande para logo */
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 5px auto; /* Centramos visualmente */
+}
+
+/* Links del menú */
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000; /* Negro por defecto */
+  padding: 8px 15px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent; /* Línea invisible inicialmente */
+}
+
+/* Hover: rojo Cartier + línea inferior */
+.navbar-nav .nav-link:hover {
+  color: #b30000;
+  border-bottom: 2px solid #b30000;
+}
+
+/* Activo (si quieres marcar la opción seleccionada) */
+.navbar-nav .nav-link.active {
+  color: #b30000;
+  border-bottom: 2px solid #b30000;
+}
+
+/* === CARRUSEL === */
+.carousel-aspect-ratio {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-aspect-ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* === TARJETAS (BAZAAR Y OTROS) === */
+.card {
+  border: none;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === SWIPER (MÓVIL) === */
+.swiper {
+  padding-bottom: 2rem;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  height: auto;
+}
+
+/* === TITULOS === */
+.fs-2 {
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+/* === LINKS "Ver más" === */
+a.text-decoration-underline {
+  color: #b30000;
+  transition: all 0.3s ease-in-out;
+}
+
+a.text-decoration-underline:hover {
+  text-decoration: none;
+  color: #800000;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #fff;
+  color: #000;
+  padding: 40px 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+footer h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #b30000;
+}
+
+footer a img {
+  filter: grayscale(100%) brightness(0%) contrast(100%); /* Íconos negros */
+  transition: filter 0.3s ease;
+}
+
+footer a img:hover {
+  filter: grayscale(0%) brightness(40%) sepia(100%) hue-rotate(-20deg) saturate(500%); /* Rojo */
+}
+
+footer .bottom-line {
+  border-top: 1px solid #ddd;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 90px; /* Logo más pequeño en móviles */
+  }
+}
+/* Botón flotante de WhatsApp en rojo Cartier */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background-color: #A6192E; /* Rojo Cartier */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* Icono blanco */
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Versión responsive (más pequeña en móviles) */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
+  }
+}
+/* Rojo Cartier para tabs y botones */
+.nav-tabs .nav-link.active {
+  color: #A6192E !important;
+  border-color: #A6192E #A6192E transparent !important;
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link {
+  color: #A6192E !important;
+  border: 1px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #fff !important;
+  background-color: #A6192E !important;
+  border-radius: 0.25rem;
+}
+
+/* Botón rojo Cartier */
+.btn-cartier {
+  background-color: #A6192E;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+}
+
+.btn-cartier:hover {
+  background-color: #7C1221;
+  color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-bar {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+  margin: 5px 10px;
+}
+
+.footer-section:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background-color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-left: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 14px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #ccc;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .footer-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-section:not(:last-child)::after {
+    display: none;
+  }
+}
+
+.carrusel-ajustado {
+  padding-top: 140px; /* Altura estimada de la navbar */
+}
+
+/* En móviles, la navbar es más pequeña */
+@media (max-width: 768px) {
+  .carrusel-ajustado {
+    padding-top: 70px;
+  }
+}
+
+/* Logo tamaño en escritorio */
+.logo-navbar {
+  height: 80px;
+  width: auto;
+}
+
+/* Ajustes en móviles */
+@media (max-width: 768px) {
+  .logo-navbar {
+    height: 60px !important;
+  }
+
+  .navbar {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ajusta altura general */
+  .navbar .container-fluid {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+
+  /* Logo móvil más pequeño y alineado con hamburguesa */
+  .logo-navbar-mobile {
+    height: 50px !important;
+    width: auto;
+  }
+
+  /* Botón hamburguesa más compacto */
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    border: none;
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+    background-size: 100% 100%;
+  }
+
+  /* Logo sin centrado forzado */
+  .navbar-brand {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Remueve espacio vacío (ya no se necesita balance visual) */
+  .navbar .d-flex.d-lg-none > div:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Centra el logo perfectamente en móviles */
+  .navbar .navbar-brand {
+    position: relative;
+    z-index: 1;
+  }
+
+  .navbar .navbar-toggler {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  .navbar .d-flex.d-lg-none {
+    justify-content: center !important;
+  }
+}
+/* === NAVBAR REDUCIDA AL HACER SCROLL (ESCRITORIO) === */
+@media (min-width: 992px) {
+  .navbar.shrink {
+    height: 70px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar.shrink .logo-navbar {
+    height: 60px !important;
+  }
+
+  .navbar.shrink .navbar-nav .nav-link {
+    padding: 6px 12px !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar.shrink .container-fluid {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 40px;
+  }
+
+  .navbar.shrink .navbar-brand {
+    margin: 0 !important;
+  }
+
+  .navbar.shrink .navbar-brand img {
+    height: 60px !important;
+  }
+
+  .navbar.shrink .navbar-collapse {
+    display: flex !important;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .navbar.shrink .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    margin-left: auto;
+  }
+
+  .navbar.shrink .nav-link {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+/* === AJUSTES ADICIONALES PARA SHRINK: Logo a la izquierda, menú distribuido === */
+@media (min-width: 992px) {
+  .navbar.shrink .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar.shrink .navbar-brand {
+    order: 0;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar.shrink .navbar-collapse {
+    order: 1;
+    flex-grow: 1;
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .navbar.shrink .navbar-nav {
+    gap: 3rem;
+    justify-content: flex-start;
+  }
+}
+
+/* === TEXTOS CENTRADOS SOLO EN MÓVIL === */
+@media (max-width: 768px) {
+  #signet h2, 
+  #signet p, 
+  #signet a,
+  #medallon h2, 
+  #medallon p, 
+  #medallon a,
+  #nosotros h2,
+  #nosotros p,
+  #nosotros a {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+
+/* === SECCIÓN NOSOTROS === */
+
+/* Cuerpo del texto: siempre justificado */
+#nosotros p {
+  text-align: justify !important;
+}
+
+/* Título en móvil: centrado */
+@media (max-width: 768px) {
+  #nosotros h2 {
+    text-align: center !important;
+  }
+}
+
+/* Título en escritorio: justificado */
+@media (min-width: 769px) {
+  #nosotros h2 {
+    text-align: justify !important;
+  }
+}
+
+/* Botón "Comprar ahora" centrado en móvil */
+@media (max-width: 768px) {
+  .btn-comprar {
+    display: block !important;
+    text-align: center !important;
+    margin: 20px auto 0 auto !important; /* centra horizontalmente */
+  }
+}
